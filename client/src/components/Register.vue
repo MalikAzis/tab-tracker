@@ -18,7 +18,7 @@
               :type="'password'"
             ></v-text-field>
             </v-flex>
-            <div class="error" v-html="error">
+            <div class="danger-alert" v-html="error">
             </div>
             <v-btn dark color="light-blue darken-4" @click="register">Register</v-btn>
           </panel>
@@ -30,6 +30,7 @@
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+
 export default {
   data () {
     return {
@@ -47,6 +48,9 @@ export default {
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'songs'
+        })
       } catch (error) {
         this.error = error.response.data.error
       }
@@ -57,8 +61,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-.error {
-  color: #fff;
-}
 </style>
