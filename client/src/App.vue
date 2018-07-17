@@ -35,4 +35,8 @@ export default {
   font-weight: bold;
 }
 
+.danger-alert {
+  color: red;
+}
+
 </style>
