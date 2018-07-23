@@ -2,7 +2,11 @@
   <v-form>
     <v-container>
       <v-layout row wrap>
-        <v-flex xs6 offset-xs3>
+        <v-flex xs-6>
+          <songs-bookmarks/>
+        </v-flex>
+
+        <v-flex xs6 >
           <songs-search-panel/>
           <songs-panel class="mt-2"/>
         </v-flex>
@@ -13,12 +17,14 @@
 
 <script>
 import SongsPanel from './SongsPanel'
+import SongsBookmarks from './SongsBookmarks'
 import SongsSearchPanel from './SongsSearchPanel'
 import SongService from '@/services/SongService'
 export default {
   components: {
     SongsPanel,
-    SongsSearchPanel
+    SongsSearchPanel,
+    SongsBookmarks
   },
   data () {
     return {
